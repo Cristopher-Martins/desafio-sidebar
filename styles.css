@@ -2,15 +2,15 @@
     --body-bg-color: #dce4e3;
     --green: #18c29c;
     --light-green: #8ed7c6;
-        --light-grey: #dce4e3;
+    --light-grey: #dce4e3;
     --text-color: #084236;
 }
 
-*{
+* {
     font-family: Poppins;
 }
 
-body{
+body {
     display: flex;
     margin: 0;
     background-color: #dce4e3;
@@ -35,15 +35,15 @@ button {
 aside {
     background-color: #18c29c;
     height: 96vh;
-    width: fit-content;
-    left: 0;
-    top: 0;    
+    width: 78px;  
 }
 
 .aside-header{
-    width: fit-content;
+    width: auto;
     padding: 14px;
     padding-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu-container{
@@ -51,23 +51,24 @@ aside {
     padding-top: 0px;
     display: flex;
     flex-direction: column;
-    max-width: 100px;
     gap: 8px;
 }
 
 .aside-footer{
-    width: fit-content;
     position: absolute;
-    top: 96vh;
-    padding: 14px;
+    bottom: 0;
     margin: 0;
+    width: 78px;
     background-color: #8ed7c6;
+    display: flex;
+    align-items: center;
 }
 
-.button-box{
+.button-box {
     margin: 0 ;
     padding: 13px;
-    max-width: 24px;
+    width: max-content;
+    max-width: 200px;
     max-height: 24px;
     border-radius: 12px;
     
@@ -78,4 +79,59 @@ aside {
 
 .button-box:hover{
     background-color: #dce4e3;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    padding: 9px;
+}
+
+p{
+    display: none;
+    font-size: 15px;
+    margin: 0;
+}
+
+.user-data :last-child{
+    font-size: 12px;
+}
+
+aside.opened{
+    width: 250px;
+}
+
+.aside-footer.opened{
+    width: 250px;
+}
+
+.opened {
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+.closed {
+    animation-duration: 1s;
+    animation-name: slideout;
+}
+
+@keyframes slidein {
+    from {
+      width: 78px;
+    }
+  
+    to {
+      width: 250px;
+    }
+}
+
+@keyframes slideout {
+    from {
+      width: 250px
+    }
+  
+    to {
+      width: 78px;
+    }
 }
