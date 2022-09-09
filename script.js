@@ -1,29 +1,39 @@
 const getAside = document.querySelector('aside')
-const getAsideFooter = document.querySelector('.aside-footer')
-const getP = document.querySelector('p')
+const getP = document.querySelectorAll('p')
+const getAsideLogo = document.querySelector('.aside-logo')
+const getAvatar = document.querySelector('.avatar')
 
 function clicou () {
     const opened = getAside.classList.contains('opened')
     const closed = getAside.classList.contains('closed')
     
 
-    if (closed == true) {    
+    if (closed) {    
         getAside.classList.remove('closed')
         getAside.classList.add('opened')
-        getAsideFooter.classList.remove('closed')
-        getAsideFooter.classList.add('opened')
-        getP.style.display = "block";
+        getP.forEach(e => {
+            e.style.display = "block";
+        });
+        getAsideLogo.style.display = "block";
+        getAvatar.style.display = "block";
     }
-    else if (opened == true) {        
+    else if (opened) {        
         getAside.classList.remove('opened')
         getAside.classList.add('closed')
-        getAsideFooter.classList.remove('opened')
-        getAsideFooter.classList.add('closed')
-        getP.style.display = "block";
+        getP.forEach(e => {
+            e.style.display = "none";
+        });
+        getAsideLogo.style.display = "none";
+        getAvatar.style.display = "none";
     }
     else {
+        console.log(getAsideLogo ,getAvatar)
+
         getAside.classList.add('opened')
-        getAsideFooter.classList.add('opened')
-        getP.style.display = "block";
+        getP.forEach(e => {
+            e.style.display = "block";
+        });    
+        getAsideLogo.style.display = "block";
+        getAvatar.style.display = "block";  
     }
 }
