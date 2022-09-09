@@ -54,24 +54,26 @@ aside {
     gap: 8px;
 }
 
-.aside-footer{
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    width: 78px;
+.aside-footer{   
+    display: flex; 
+    margin: 0 auto;
+    width: 100%;
+    height: 60px; /* por algum motivo não funciona */
     background-color: #8ed7c6;
-    display: flex;
+    flex:0 0 50px;
+    justify-content: space-between;
     align-items: center;
 }
 
 .button-box {
-    margin: 0 ;
+    margin: 0;
     padding: 13px;
-    width: max-content;
+    width: fit-content;
     max-width: 200px;
     max-height: 24px;
     border-radius: 12px;
     
+    /* propriedades para o texto dentro das boxes */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -92,6 +94,7 @@ p{
     display: none;
     font-size: 15px;
     margin: 0;
+    overflow: hidden;
 }
 
 .user-data :last-child{
@@ -134,4 +137,16 @@ aside.opened{
     to {
       width: 78px;
     }
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aside-logo,.avatar{
+    display: none;
+    padding-left: 13px;
 }
