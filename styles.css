@@ -1,3 +1,7 @@
+/* ANOTAÇÃO PARA PRÓXIMA VEZ QUE MEXER::: REFATORAR COM TRANSITION */
+
+
+
 :root {
     --body-bg-color: #dce4e3;
     --green: #18c29c;
@@ -34,8 +38,13 @@ button {
 
 aside {
     background-color: #18c29c;
-    height: 96vh;
-    width: 78px;  
+    height: 100vh;
+    width: 78px; 
+    transition: width 500ms;
+}
+
+aside.opened{
+    width: 250px;
 }
 
 .aside-header{
@@ -91,31 +100,36 @@ aside {
 }
 
 p{
+    position: relative;
     display: none;
     font-size: 15px;
     margin: 0;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+p.opened{
+    opacity: 1;
 }
 
 .user-data :last-child{
     font-size: 12px;
 }
 
-aside.opened{
-    width: 250px;
-}
+
 
 .aside-footer.opened{
     width: 250px;
 }
 
-.opened {
-    animation-duration: 1s;
+/* .opened {
+    animation-duration: 2s;
     animation-name: slidein;
 }
 
 .closed {
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-name: slideout;
 }
 
@@ -137,6 +151,36 @@ aside.opened{
     to {
       width: 78px;
     }
+} */
+
+.fadeIn{    
+    animation-duration: 501ms;
+    animation-name: fadeIn;         
+}
+
+.fadeOut{    
+    animation-duration: 501ms;
+    animation-name: fadeOut;         
+}
+
+@keyframes fadeIn {
+    from {
+        width: 0%
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        width: 100%
+    }
+
+    to {
+        width: 0%;
+    }
 }
 
 .container{
@@ -149,4 +193,12 @@ aside.opened{
 .aside-logo,.avatar{
     display: none;
     padding-left: 13px;
+}
+
+.aside-logo{
+    max-width: 64px;
+}
+
+.avatar{
+    max-width: 45px;
 }
