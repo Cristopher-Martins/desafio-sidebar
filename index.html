@@ -12,12 +12,12 @@
 </head>
 <body>
 
-    <aside>
+    <aside class="closed">
         <div class="container">
             <div>
                 <div class="aside-header">
                     <img src="./images/logo.svg" alt="" class="aside-logo fadeIn">
-                    <button onclick="clicou()">
+                    <button onclick="sidebar()">
                         <div class="button-box">
                             <img src="./images/menu.svg" alt="">
                         </div>
@@ -51,14 +51,18 @@
                 </div>
             </div>
             <div class="aside-footer">
-                <img src="./images/photo.jpg" alt="" class="avatar fadeIn">
-                <div class="user-data">
-                    <p class="fadeIn">ProfileName</p>
-                    <p class="fadeIn">ProfileJob</p>
+                <div class="user-content">
+                    <img src="./images/photo.jpg" alt="" class="avatar fadeIn">
+                    <div class="user-data">
+                        <p class="fadeIn">ProfileName</p>
+                        <p class="fadeIn">ProfileJob</p>
+                    </div>
                 </div>                
-                <div class="button-box">
-                    <img src="./images/log-out.svg" alt="">
-                </div>                
+                <button id="translate-button">
+                    <div class="button-box">
+                        <img src="./images/log-out.svg" alt="">
+                    </div>
+                </button>                
             </div>
         </div>
     </aside>

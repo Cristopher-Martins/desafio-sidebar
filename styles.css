@@ -1,7 +1,5 @@
 /* ANOTAÇÃO PARA PRÓXIMA VEZ QUE MEXER::: REFATORAR COM TRANSITION */
 
-
-
 :root {
     --body-bg-color: #dce4e3;
     --green: #18c29c;
@@ -63,15 +61,18 @@ aside.opened{
     gap: 8px;
 }
 
-.aside-footer{   
+.aside-footer{      
     display: flex; 
-    margin: 0 auto;
-    width: 100%;
-    height: 60px; /* por algum motivo não funciona */
+    padding: 5px 14px;
+    width: auto;
     background-color: #8ed7c6;
-    flex:0 0 50px;
     justify-content: space-between;
+}
+
+.user-content{
+    display: flex;
     align-items: center;
+    gap: 9px;
 }
 
 .button-box {
@@ -91,12 +92,11 @@ aside.opened{
 .button-box:hover{
     background-color: #dce4e3;
 }
-
+    /* ícone do usuário */
 .avatar {
     width: 45px;
     height: 45px;
     border-radius: 12px;
-    padding: 9px;
 }
 
 p{
@@ -117,41 +117,39 @@ p.opened{
     font-size: 12px;
 }
 
-
-
 .aside-footer.opened{
     width: 250px;
 }
 
-/* .opened {
-    animation-duration: 2s;
-    animation-name: slidein;
+.translateIn{    
+        animation-duration: 501ms;
+        animation-name: translateIn;         
+}
+    
+@keyframes translateIn {
+        from {
+            translate: -110px;
+        }
+    
+        to {
+            translate: 0px;
+        }
 }
 
-.closed {
-    animation-duration: 2s;
-    animation-name: slideout;
+.translateOut{    
+    animation-duration: 501ms;
+    animation-name: translateOut;         
 }
 
-@keyframes slidein {
+@keyframes translateOut {
     from {
-      width: 78px;
+        translate: 0px;
     }
-  
+
     to {
-      width: 250px;
+        translate: -110px;
     }
 }
-
-@keyframes slideout {
-    from {
-      width: 250px
-    }
-  
-    to {
-      width: 78px;
-    }
-} */
 
 .fadeIn{    
     animation-duration: 501ms;
@@ -183,6 +181,7 @@ p.opened{
     }
 }
 
+/* para jogar o footer para o rodapé */
 .container{
     height: 100%;
     display: flex;
@@ -192,7 +191,7 @@ p.opened{
 
 .aside-logo,.avatar{
     display: none;
-    padding-left: 13px;
+    margin-left: 13px;
 }
 
 .aside-logo{
